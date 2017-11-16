@@ -167,7 +167,7 @@ public class StreamMain {
 
         System.out.println("\n********************************\n");
 
-        System.out.println("Próba");
+
 
     }
 }
