@@ -41,17 +41,17 @@ public class WorldTestSuite {
         asia.addCountry(iran);
         australiaContinent.addCountry(australiaCountry);
 
-        World earth = new World();
-        earth.addContinent(europe);
-        earth.addContinent(northAmerica);
-        earth.addContinent(asia);
-        earth.addContinent(australiaContinent);
+        World world = new World();
+        world.addContinent(europe);
+        world.addContinent(northAmerica);
+        world.addContinent(asia);
+        world.addContinent(australiaContinent);
 
         // When
-        BigDecimal totalNumberOfPeople = earth.getTotalNumberOfPeople();
+        BigDecimal worldPopulation = world.getPopulation();
 
         // Then
-        Assert.assertEquals(new BigDecimal(3_438_400_000L), totalNumberOfPeople);
+        Assert.assertEquals(new BigDecimal(3_438_400_000L), worldPopulation);
 
     }
 }

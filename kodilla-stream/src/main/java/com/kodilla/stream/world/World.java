@@ -15,13 +15,13 @@ public final class World {
     }
 
     public List<Continent> getListOfContinents() {
-        return listOfContinents;
+        return new ArrayList<>(listOfContinents);
     }
 
-    public BigDecimal getTotalNumberOfPeople() {
+    public BigDecimal getPopulation() {
        return listOfContinents.stream()
                 .flatMap(continent -> continent.getListOfCountries().stream())
-                .map(Country::getNumberOfPeople)
+                .map(Country::getPopulation)
                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
     }
 

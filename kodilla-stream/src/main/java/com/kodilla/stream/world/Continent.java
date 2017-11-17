@@ -20,6 +20,6 @@ public final class Continent {
     }
 
     public List<Country> getListOfCountries() {
-        return listOfCountries;
+        return new ArrayList<>(listOfCountries);
     }
 }
