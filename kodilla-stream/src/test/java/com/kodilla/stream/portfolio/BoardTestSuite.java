@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -164,9 +165,11 @@ public class BoardTestSuite {
         double actualAverageMethod2 = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(task -> Period.between(task.getCreated(),LocalDate.now()))
-                .map(period -> period.getDays())
-                .mapToInt(a -> a)
+                .map(task -> ChronoUnit.DAYS.between(task.getCreated(),LocalDate.now()))
+//                // Alternative to ChronoUnit.DAYS.between(...) is Period.between(...)
+//                .map(task -> Period.between(task.getCreated(),LocalDate.now()))
+//                .map(period -> period.getDays())
+                .mapToLong(a -> a)
                 .average()
                 .getAsDouble();
 
