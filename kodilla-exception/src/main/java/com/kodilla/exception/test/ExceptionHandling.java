@@ -10,6 +10,8 @@ public class ExceptionHandling {
             secondChallenge.probablyIWillThrowException(3.0, 1.0);
         } catch (Exception e) {
             System.out.println("Exception: " + e);
+        } finally {
+            System.out.println("This will always be printed");
         }
 
     }
