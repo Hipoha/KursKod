@@ -21,6 +21,8 @@ public class FileReader {
             System.out.println("This should be printed in any case.");
         }
 
+        System.out.println("test");
+
         //System.out.println(file.getPath());
 
     }
