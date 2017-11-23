@@ -12,6 +12,6 @@ public class NullPointerExceptionRunner {
                     "but the program is still running well!");
         }
 
-        System.out.println("Processing other logic!");
+        System.out.println("Processing another logic!");
     }
 }
