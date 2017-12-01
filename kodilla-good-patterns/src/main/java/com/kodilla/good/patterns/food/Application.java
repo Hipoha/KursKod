@@ -7,9 +7,16 @@ public class Application {
         DeliveryRequestRetriever deliveryRequestRetriever = new DeliveryRequestRetriever();
         DeliveryRequest deliveryRequest = deliveryRequestRetriever.retrieve();
 
+        InformationService mailService = new MailService();
+
         try {
             FoodSupplier foodSupplier = FindSupplier.find(deliveryRequest.getFoodSupplier());
-            foodSupplier.process(deliveryRequest);
+            boolean isAccepted = foodSupplier.process(deliveryRequest);
+            if (isAccepted) {
+                mailService.informDeliveryOrderAccepted();
+            } else {
+                mailService.informDeliveryOrderRejected();
+            }
         } catch (NoSupplierException e) {
             System.out.println(e);
         }
