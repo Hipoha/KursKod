@@ -4,7 +4,7 @@ public class DeliveryRequestRetriever {
 
     public DeliveryRequest retrieve() {
 
-        String foodSupplier = "eExtra Food Shop";
+        String foodSupplier = "Extra Food Shop";
         String product = "Lentils";
         double quantity = 30;
         String unit = "kg";
