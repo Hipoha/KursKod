@@ -12,7 +12,7 @@ public class FindSupplier {
             case "gluten free shop":
                 return new GlutenFreeShop();
         }
-        throw new NoSupplierException("supplier not found!");
+        throw new NoSupplierException("Supplier not found!");
     }
 
 }
